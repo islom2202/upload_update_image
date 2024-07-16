@@ -12,12 +12,6 @@
   <!--main-->
   <main>
     <p><?=$title?> page</p>
-    <input type="search" list='options'>
-    <datalist id='options'>
-      <?php foreach($homeData as $data){
-        echo "<option value=" . ucfirst($data['username']) . "></option>";
-      }?>
-    </datalist>
     <!--grid list-->
     <ul style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; list-style: none">
       <?php foreach($homeData as $data){
