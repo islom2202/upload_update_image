@@ -1,0 +1,17 @@
+header{
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  ul{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    a{
+      text-decoration: none;
+    }
+    .active{
+      text-decoration: underline 2px;
+      text-underline-offset: 2px;
+    }
+  }
+}
