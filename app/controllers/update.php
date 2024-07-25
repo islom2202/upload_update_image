@@ -19,10 +19,15 @@
         $id = $_POST['id'];
         $name = $_POST['name'];
         $db = new Database();
-        $db->write('UPDATE products SET name = :name WHERE id = :id', [':name' => $name, ':id' => $id]);
+        if($name){
+          $db->write('UPDATE products SET name = :name WHERE id = :id', [':name' => $name, ':id' => $id]);
+        }else{
+          echo 'Please add a name for this image!';
+          die();
+        }
 
         // Update the image of the product
-        if(isset($_POST['update'])){
+        if(isset($_POST['update']) && $_FILES['file']['error'] != 4){ // 4 = no file is selected
           $file = $_FILES['file'];
           $fileName = $file['name'];
           $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
@@ -60,10 +65,10 @@
             move_uploaded_file($file['tmp_name'], $newDestination);
             //- add to database
             $database->write('UPDATE products SET image = :image WHERE id = :id', [':image' => $newDestination, ':id' => $id]);
-            header('Location:' . ROOT .  'home');
         }
+        // Navigate to the home page
+        header('Location:' . ROOT .  'home');
       }
-
     }
   } 
   
