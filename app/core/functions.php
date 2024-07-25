@@ -8,3 +8,4 @@ function show($stuff): void{
 function find_active_class(string $title, string $anchor): string{
   return $title == $anchor ? 'active' : '';
 }
+

@@ -14,7 +14,7 @@
     <p><?=$title?> page</p>
     <!--grid list-->
     <ul style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; list-style: none">
-      <?php foreach($homeData as $data){
+      <?php foreach($productsData as $data){
         echo 
         "
         <li>
