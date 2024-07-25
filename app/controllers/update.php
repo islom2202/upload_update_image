@@ -22,8 +22,7 @@
         if($name){
           $db->write('UPDATE products SET name = :name WHERE id = :id', [':name' => $name, ':id' => $id]);
         }else{
-          echo 'Please add a name for this image!';
-          die();
+          generate_error_page('Please add a name for this image!');
         }
 
         // Update the image of the product

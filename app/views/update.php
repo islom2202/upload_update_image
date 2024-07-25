@@ -10,7 +10,6 @@
   <!--header-->
   <?php require "partials/header.php"; ?>
   <p><?=$title?> page</p>
-
   <!--main-->
   <main>
     <!--grid list-->

@@ -10,8 +10,7 @@ class App{
       require "../app/controllers/$url[0].php";
       $this->controller = new $url[0];
     }else{
-      require '../app/views/404.php';
-      die();
+      generate_error_page('404, Page not found!', ROOT . 'assets/illustrations/404-page-not-found.svg');
     }
     if(isset($url[1]) && method_exists($this->controller, $url[1])){
       $this->method = $url[1];
