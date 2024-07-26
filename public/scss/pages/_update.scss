@@ -21,9 +21,7 @@
       user-select: none
     }
     &__fileSelector{
-      // visibility: hidden;
-      display: block;
-      margin-left: 50px;
+      display: none;
     }
   }
 }

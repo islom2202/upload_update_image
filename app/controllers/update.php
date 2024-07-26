@@ -22,7 +22,7 @@
         if($name){
           $db->write('UPDATE products SET name = :name WHERE id = :id', [':name' => $name, ':id' => $id]);
         }else{
-          generate_error_page('Please add a name for this image!');
+          generate_error_page('Please add a name for this image!', ROOT . 'assets/illustrations/full-moon-face.svg');
         }
 
         // Update the image of the product
